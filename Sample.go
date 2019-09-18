@@ -4,5 +4,5 @@ package main
 import "fmt"
 
 func main() {
-	fmt.Printf("Sandip")
+	fmt.Printf("Life")
 }
