@@ -13,7 +13,7 @@ type Person struct {
     ID        string   `json:"id,nepal"`
     Firstname string   `json:"firstname,krishna"`
     Lastname  string   `json:"lastname,neupane"`
-    Address   *Address `json:"address,texas"`
+    Address   *Address `json:"address,missuri"`
 }
 
 type Address struct {
@@ -48,7 +48,7 @@ func CreatePersonEndpoint(w http.ResponseWriter, req *http.Request) {
     json.NewEncoder(w).Encode(people)
 }
 
-func DeletePersonEndpoint(w http.ResponseWriter, req *http.Request) {
+func (w http.ResponseWriter, req *http.Request) {
     params := mux.Vars(req)
     for index, item := range people {
         if item.ID == params["id"] {
@@ -67,5 +67,5 @@ func main() {
     router.HandleFunc("/people/{id}", GetPersonEndpoint).Methods("GET")
     router.HandleFunc("/people/{id}", CreatePersonEndpoint).Methods("POST")
     router.HandleFunc("/people/{id}", DeletePersonEndpoint).Methods("DELETE")
-    log.Fatal(http.ListenAndServe(":12345", router))
+    log.Fatal(http.ListenAndServe(":8090", router))
 }
