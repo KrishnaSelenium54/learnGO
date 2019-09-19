@@ -5,8 +5,7 @@ import (
     "encoding/json"
     "log"
     "net/http"
-
-	"github.com/KrishnaSelenium54/learnGO.git"
+    "github.com/gorilla/mux"
 	
 )
 
@@ -18,8 +17,8 @@ type Person struct {
 }
 
 type Address struct {
-    City  string `json:"city,irving"`
-    State string `json:"state,texas"`
+    City  string `json:"city,ahaneim"`
+    State string `json:"state,california"`
 }
 
 var people []Person
@@ -31,7 +30,8 @@ func GetPersonEndpoint(w http.ResponseWriter, req *http.Request) {
             json.NewEncoder(w).Encode(item)
             return
         }
-    }
+	
+}
     json.NewEncoder(w).Encode(&Person{})
 }
 
