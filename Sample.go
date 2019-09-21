@@ -13,7 +13,7 @@ type Person struct {
     ID        string   `json:"id,nepal"`
     Firstname string   `json:"firstname,krishna"`
     Lastname  string   `json:"lastname,neupane"`
-    Address   *Address `json:"address,missuri"`
+    Address   *Address `json:"address,ohio"`
 }
 
 type Address struct {
